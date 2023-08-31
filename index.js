@@ -9,7 +9,25 @@ app.use(express.json())
 app.use(cors())
 
 const IP = require('ip');
+const Nodeku = require('nodeku')
 // console.log(ipAddress);
+
+
+const data = async () => await Nodeku()
+  .then(device => {
+    console.log(`device found at: ${ device.ip() }`)
+    // 'xxx.xxx.xxx.xxx:8060'
+    return device.apps()
+  })
+  .then(apps => {
+    // apps.forEach(app => console.log(app))
+    // [{ id, name, type, version }, ...]
+  })
+  .catch(err => {
+    console.error(err.stack)
+  })
+  // console.log(data)
+  data()
 
 app.get('/device', async (req, res) => {
   // Roku.discover(function (devices) {
