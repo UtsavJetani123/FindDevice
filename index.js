@@ -19,7 +19,7 @@ app.get('/device', async (req, res) => {
     res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
     res.setHeader('Access-Control-Allow-Credentials', true);
     res.send(ipAddress)
-    console.log(devices);
+    console.log(ipAddress);
     res.end()
   // });
 })
