@@ -12,7 +12,7 @@ const IP = require('ip');
 const ipAddress = IP.address()
 // console.log(ipAddress);
 
-app.get('/', async (req, res) => {
+app.get('/device', async (req, res) => {
   Roku.discover(function (devices) {
     res.setHeader('Access-Control-Allow-Origin', '*');
     res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE');
