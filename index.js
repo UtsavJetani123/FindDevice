@@ -20,25 +20,25 @@ const data = async () => await Nodeku()
     return device.apps()
   })
   .then(apps => {
-    // apps.forEach(app => console.log(app))
+    apps.forEach(app => console.log(app))
     // [{ id, name, type, version }, ...]
   })
   .catch(err => {
     console.error(err.stack)
   })
   // console.log(data)
-  data()
-
-app.get('/device', async (req, res) => {
+  
+  app.get('/device', async (req, res) => {
+    data()
   // Roku.discover(function (devices) {
-    const ipAddress = IP.address()
-    res.setHeader('Access-Control-Allow-Origin', '*');
-    res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE');
-    res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
-    res.setHeader('Access-Control-Allow-Credentials', true);
-    res.send(ipAddress)
-    console.log(ipAddress);
-    res.end()
+    // const ipAddress = IP.address()
+    // res.setHeader('Access-Control-Allow-Origin', '*');
+    // res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE');
+    // res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
+    // res.setHeader('Access-Control-Allow-Credentials', true);
+    // res.send(ipAddress)
+    // console.log(ipAddress);
+    // res.end()
   // });
 })
 
