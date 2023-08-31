@@ -20,9 +20,7 @@ app.get('/', async (req, res) => {
 })
 
 function StartPort(){
-  app.listen(port, () => {
-    console.log(`Example app listening on port ${port}`)
-  })
+  app.listen(port, ipAddress)
 
 }
 
