@@ -11,18 +11,12 @@ app.use(cors())
 const IP = require('ip');
 const ipAddress = IP.address()
 // console.log(ipAddress);
+
 app.get('/', async (req, res) => {
   Roku.discover(function (devices) {
     res.send(devices)
-    console.log(devices);
     res.end()
   });
-})
-
-app.get("/Restart",(req, res) => {
-  res.send("server restart successfully")
-  process.exit(0)
-  // StartPort()
 })
 
 function StartPort(){
