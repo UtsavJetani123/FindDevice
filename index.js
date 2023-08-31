@@ -25,7 +25,9 @@ app.get('/device', async (req, res) => {
 })
 
 function StartPort(){
-  app.listen(port, ipAddress)
+  app.listen(port, ()=>{
+    console.log("Server Start 5500");
+  })
 
 }
 
