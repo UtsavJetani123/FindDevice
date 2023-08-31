@@ -9,26 +9,21 @@ app.use(express.json())
 app.use(cors())
 
 const IP = require('ip');
-const ipAddress = IP.address()
 // console.log(ipAddress);
 
 app.get('/device', async (req, res) => {
-  Roku.discover(function (devices) {
+  // Roku.discover(function (devices) {
+    const ipAddress = IP.address()
     res.setHeader('Access-Control-Allow-Origin', '*');
     res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE');
     res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
     res.setHeader('Access-Control-Allow-Credentials', true);
-    res.send(devices)
+    res.send(ipAddress)
     console.log(devices);
     res.end()
-  });
+  // });
 })
 
-function StartPort(){
   app.listen(port, ()=>{
     console.log("Server Start 5500");
   })
-
-}
-
-StartPort()
